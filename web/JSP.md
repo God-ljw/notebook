@@ -856,7 +856,7 @@ MVC 是一种分层开发的模式，其中：
 
 * C：Controller，控制器，处理请求，调用模型和视图
 
-<img src="https://cdn.jsdelivr.net/gh/God-ljw/picbed/img/202207281423674.png" alt="image-20210818163348642" style="zoom:70%;" />
+<img src="../../202207281423674.png" alt="image-20210818163348642" style="zoom:70%;" />
 
 控制器（serlvlet）用来接收浏览器发送过来的请求，控制器调用模型（JavaBean）来获取数据，比如从数据库查询数据；控制器获取到数据后再交由视图（JSP）进行数据展示。
 
@@ -894,7 +894,7 @@ MVC 是一种分层开发的模式，其中：
 
 通过 MVC 和 三层架构 的学习，有些人肯定混淆了。那他们有什么区别和联系？
 
-<img src="https://cdn.jsdelivr.net/gh/God-ljw/picbed/img/202207281424315.png" alt="image-20210818165808589" style="zoom:60%;" />
+<img src="../../202207281424315.png" alt="image-20210818165808589" style="zoom:60%;" />
 
 如上图上半部分是 MVC 模式，上图下半部分是三层架构。 `MVC 模式` 中的 C（控制器）和 V（视图）就是 `三层架构` 中的表现层，而 `MVC 模式` 中的 M（模型）就是 `三层架构` 中的 业务逻辑层 和 数据访问层。
 

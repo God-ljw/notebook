@@ -14,13 +14,13 @@ Java Virtual Machine，JAVA程序的**运行环境**（JAVA二进制字节码的
 
 JVM JRE JDK的区别
 
-[![img](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150422.png)](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150422.png)
+[![img](https://cdn.jsdelivr.net/gh/God-ljw/picbed@main/img3/202301150015074.png)](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150422.png)
 
 ## 二、内存结构
 
 ### **整体架构**
 
-[![img](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150440.png)](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150440.png)
+[![img](https://cdn.jsdelivr.net/gh/God-ljw/picbed@main/img3/202301150014365.png)](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150440.png)
 
 ### 1、程序计数器
 
@@ -66,7 +66,7 @@ public class Main {
 }Copy
 ```
 
-[![img](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150534.png)](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150534.png)
+[![img](https://cdn.jsdelivr.net/gh/God-ljw/picbed@main/img3/202301150015899.png)](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150534.png)
 
 在控制台中可以看到，主类中的方法在进入虚拟机栈的时候，符合栈的特点
 
@@ -238,7 +238,7 @@ public class Demo1_4 {
 
 #### 结构
 
-[![img](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150547.png)](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150547.png)
+[![img](https://cdn.jsdelivr.net/gh/God-ljw/picbed@main/img3/202301150017751.png)](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150547.png)
 
 - 设置元空间大小：**-XX:MaxMetaspaceSize=内存大小** 例如-XX:MaxMetaspaceSize=8m
 - 设置永久代空间大小：**-XX:MaxPermSize=8m**
@@ -314,7 +314,7 @@ public class Demo1_4 {
 
   - 在JDK对应的bin目录下运行cmd，**也可以在IDEA控制台输入**
 
-    [![img](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150602.png)](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150602.png)
+    [![img](https://cdn.jsdelivr.net/gh/God-ljw/picbed@main/img3/202301150022273.png)](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150602.png)
 
   - 输入 **javac 对应类的绝对路径**
 
@@ -338,7 +338,7 @@ public class Demo1_4 {
 
   - 常量池
 
-    [![img](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150630.png)](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150630.png)
+    [![img](https://cdn.jsdelivr.net/gh/God-ljw/picbed@main/img3/202301150022807.png)](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150630.png)
 
     [![img](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150641.png)](https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20200608150641.png)
 

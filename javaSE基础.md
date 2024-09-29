@@ -21,7 +21,7 @@ javaDoc 注释 --> /**   文本   */
 
  **DOC命令**
 
-![image-20220531213418419](https://cdn.jsdelivr.net/gh/God-ljw/picbed/img/202207301156505.png)
+![image-20220531213418419](https://picgo-img-pic.oss-cn-guangzhou.aliyuncs.com/img/202309112302254.png)
 
 1.切换盘：例如e盘--> e:
 
@@ -73,7 +73,7 @@ javaDoc 注释 --> /**   文本   */
 
 
 
-![image-20220531204617060](https://cdn.jsdelivr.net/gh/God-ljw/picbed/img/202207301156364.png)
+![image-20220531204617060](https://picgo-img-pic.oss-cn-guangzhou.aliyuncs.com/img/202309112301173.png)
 
 ![image-20220531204638747](https://s2.loli.net/2022/05/31/LifaW5Tn2YBgKqD.png)
 
@@ -130,6 +130,70 @@ import java.util.Scanner
 Scanner sc= new Scanner(System.in)
 3.接受数据
 int i=sc.nextInt()
+```
+
+```
+next() 与 nextLine() 区别
+
+next():
+一定要读取到有效字符后才可以结束输入。
+对输入有效字符之前遇到的空白，next() 方法会自动将其去掉。
+只有输入有效字符后才将其后面输入的空白作为分隔符或者结束符。
+next() 不能得到带有空格的字符串。
+
+nextLine()：
+以Enter为结束符,也就是说 nextLine()方法返回的是输入回车之前的所有字符。
+可以获得空白。
+
+通过 Scanner 类的 next()与 nextLine() 方法获取输入的字符串，在读取前我们一般需要 使用 hasNext与 hasNextLine判断是否还有输入的数据：
+hasNext() 与 hasNextLine() 区别
+
+hasNext():
+1、输出为布尔值。
+2、判断输入的缓存中是否有效字符，遇到空格结束。
+3、如果只输入空格，不会匹配，返回false。
+
+hasNextLine()：
+
+1、以Enter为结束符,判断此行有没有输入，空白输入也会返回true。
+通过 Scanner 类的 next() 与 nextLine() 方法获取输入的字符串，在读取前我们一般需要 使用 hasNext 与 hasNextLine 判断是否还有输入的数据
+
+使用中的正确搭配
+hasNext() —> next()
+hasNextLine()----> nextLine()
+
+
+```
+
+```java
+public class TestScanner {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+         //注意 hasNext 和 hasNextLine 的区别
+        while (in.hasNextInt()) { // 注意 while 处理多个 case
+            int a = in.nextInt();
+            int b = in.nextInt();
+            System.out.println(a + b);
+            break;
+        }
+        System.out.println("计算结束");
+
+        /**
+         * 要求：用户随意输入n个数字，计算出总和
+         */
+//        int n = in.nextInt();
+//        int[] a=new int[n];
+//        int sum=0;
+//        for (int i = 0; i < a.length; i++) {
+//            a[i]= in.nextInt();
+//            sum+=a[i];
+//        }
+//        System.out.println(sum);
+
+
+    }
+
+}
 ```
 
 
@@ -5167,13 +5231,84 @@ X {n}	X，正好n次
 X {n, }	X，至少n次
 X {n,m}	X，至少n但不超过m次
 
+    
+ ^表示以什么开头
+ $表示以什么结尾
+ . 表示匹配任意一个非空字符
+ .* 表示匹配任意非空字符串
+ .? 表示匹配任意两个非空字符
+ ? 表示可以重复前面指字符1次或0次
+ 
 ```
 
 ```
 标点符号直接用[]这个表示：例如，[，]  -[-] 表示
 ```
 
+正则表达式所支持的合法字符
+字符	解释
+X	字符x（x 可代表任何合法的字符)
+\0mnn	八进制数 0mnn 所表示的字符
+\xhh	十六进制值 0xhh 所表示的字符
+\uhhhh	十六进制值 0xhhhh 所表示的 Unicode 字符
+\t	制表符（“\u0009”）
+\n	新行（换行）符（‘\u000A’）
+\r	回车符（‘\u000D’)
+\f 	换页符（‘\u000C’）
+\a	报警（bell）符（‘\u0007’）
+\e	Escape 符（‘\u001B’）
+\cx	x 对应的的控制符。例如，\cM匹配 Ctrl-M。x 值必须为 A~Z 或 a~z 之一。
 
+
+
+正则表达式中的特殊字符
+特殊字符	说明
+$	匹配一行的结尾。要匹配 $ 字符本身，请使用\$
+^	匹配一行的开头。要匹配 ^ 字符本身，请使用\^
+()	标记子表达式的开始和结束位置。要匹配这些字符，请使用\(和\)
+[]	用于确定中括号表达式的开始和结束位置。要匹配这些字符，请使用\[和\]
+{}	用于标记前面子表达式的出现频度。要匹配这些字符，请使用\{和\}
+
+*	指定前面子表达式可以出现零次或多次。要匹配 * 字符本身，请使用\*
++ 指定前面子表达式可以出现一次或多次。要匹配 + 字符本身，请使用\+
+  ?	指定前面子表达式可以出现零次或一次。要匹配 ？字符本身，请使用\?
+  .	匹配除换行符\n之外的任何单字符。要匹配.字符本身，请使用\.
+  \	用于转义下一个字符，或指定八进制、十六进制字符。如果需匹配\字符，请用\\
+  |	指定两项之间任选一项。如果要匹配丨字符本身，请使用\|
+  预定义字符
+  预定义字符	说明
+  .	可以匹配任何字符
+  \d	匹配 0~9 的所有数字
+  \D	匹配非数字
+  \s	匹配所有的空白字符，包括空格、制表符、回车符、换页符、换行符等
+  \S	匹配所有的非空白字符
+  \w	匹配所有的单词字符，包括 0~9 所有数字、26 个英文字母和下画线_
+  \W	匹配所有的非单词字符
+
+  
+
++ 方括号表达式
+
+方括号表达式 说明 表示枚举 例如 [abc]表示 a、b、c 其中任意一个字符； [gz]表示 g、z 其中任意一个字符 表示范围：- 例如 [a-f]表示 a~f 范围内的任意字符； [\\u0041-\\u0056]表示十六进制字符 \u0041 到 \u0056 范围的字符。范围可以和枚举结合使用，如 [a-cx-z]，表示 a~c、x~z 范围内的任意字符 表示求否：^ 例如 [^abc]表示非 a、b、c 的任意字符； [^a-f]表示不是 a~f 范围内的任意字符 表示“与”运算：&& 例如  [a-z&&[def]]是 a~z 和 [def] 的交集，表示 d、e
+f[a-z&&^bc]]是 a~z 范围内的所有字符，除 b 和 c 之外
+[ad-z] [a-z&&[m-p]]是 a~z 范围内的所有字符，除 m~p 范围之外的字符 表示“并”运算 并运算与前面的枚举类似。例如 [a-d[m-p]]表示 [a-dm-p]
+
+
+
+ 边界匹配符
+
+边界匹配符 说明 ^ 行的开头 $ 行的结尾 \b 单词的边界 \B 非单词的边界 \A 输入的开头 \G 前一个匹配的结尾 \Z 输入的结尾，仅用于最后的结束符 \z 输入的结尾
+三种模式的数量表示符
+
+
+
+贪婪模式	勉强模式	占用模式	说明
+X?	X??	X?+	X表达式出现零次或一次
+X*	X*?	X*+	X表达式出现零次或多次
+X+	X+?	X++	X表达式出现一次或多次
+X{n}	X{n}?	X{n}+	X表达式出现 n 次
+X{n,}	X{n,}?	X{n,}+	X表达式最少出现 n 次
+X{n,m}	X{n,m}?	X{n,m}+	X表达式最少出现 n 次，最多出现 m 次
 
 ```java
 //例子
